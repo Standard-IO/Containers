@@ -1,0 +1,1 @@
+This repository contains the docker files to build images. These images are used by me to develop applications with vscode and its extension dev-containers. This speed up to deploy all the tools what I need to start to work. Also, this will ensure that the applications will work in the images if these are deployed in containerezed way.
