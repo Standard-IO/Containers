@@ -2,6 +2,7 @@
 
 #updating
 apt-get update
+apt-get upgrade
 
 # installing curl if it doesn't exist
 type -p curl >/dev/null || apt-get install -y curl
@@ -22,7 +23,6 @@ apt-get install -y build-essential --no-install-recommends make \
     libreadline-dev \
     libsqlite3-dev \
     wget \
-    curl \
     llvm \
     libncurses5-dev \
     xz-utils tk-dev \
@@ -63,4 +63,4 @@ pyenv global 3.10
 
 # --------------------------- installing poetry ---------------------------------
 # reviewing if the command change with the name
-curl -sSL https://install.python-poetry.org | python3 - || curl -sSL https://install.python-poetry.org | python -
+curl -sSL https://install.python-poetry.org | python3 - || curl -sSL https://install.python-poetry.org | python
