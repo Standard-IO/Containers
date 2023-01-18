@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# This script is for logging shells could work with
+# interactive but is more efficient declare the env
+# in the process on contruction like in containers.
+
+# I let it, here because is reference to build other
+# packages I have in mind in the future.
+
 #updating
 apt-get update
 apt-get upgrade
@@ -17,6 +24,7 @@ export DEBIAN_FRONTEND=noninteractive
 # Installing all the necessary tools to build python
 apt-get install -y build-essential --no-install-recommends make \
     build-essential \
+    ca-certificates \
     libssl-dev \
     zlib1g-dev \
     libbz2-dev \
@@ -35,10 +43,10 @@ apt-get install -y build-essential --no-install-recommends make \
 # Saving the dir of this file
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
-# The  nextsection will crate a temp file to make a copy of bashrc to
+# The  nextsection will crate a temp file to make a copy of .bashrc to
 # try to append a little section of code to help to pyenv run when bash
-# is started. If for some reason this script fail the trap command will
-# delete it. And aditionally a temp file must be eliminated for security
+# is started. If for some reason this script fail the `trap` command will
+# delete it and a adition a temp file must be eliminated for security
 # reasons.
 
 trap 'rm -f "$TMPFILE"' EXIT

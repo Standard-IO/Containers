@@ -23,7 +23,6 @@ RUN apt-get update \
         libffi-dev \
         liblzma-dev \
     && curl https://pyenv.run | bash \
-    && echo "-------------------------> this is correctly installed" \
     && pyenv install ${PYTHON_VERSION} \
     && pyenv global ${PYTHON_VERSION} \
     && curl -sSL https://install.python-poetry.org | python3 -
