@@ -1,5 +1,6 @@
 FROM ubuntu:22.04
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
+ENV HOME="/root"
 ENV PYENV_ROOT="$HOME/.pyenv"
 ENV PATH="$PYENV_ROOT/shims:${PYENV_ROOT}/bin:/root/.local/bin:$PATH"
 ENV PYTHON_VERSION=3.10
