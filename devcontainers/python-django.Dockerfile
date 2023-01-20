@@ -26,4 +26,5 @@ RUN apt-get update \
     && curl https://pyenv.run | bash \
     && pyenv install ${PYTHON_VERSION} \
     && pyenv global ${PYTHON_VERSION} \
-    && curl -sSL https://install.python-poetry.org | python3 -
+    && curl -sSL https://install.python-poetry.org | python3 - \
+    $$ poetry config virtualenvs.in-project true
